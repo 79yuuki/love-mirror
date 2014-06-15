@@ -2,6 +2,14 @@
 
 BaPA product
 
+## Quick Start
+
+Start love mirror.
+
+  cd love-mirror
+  npm install
+  node app.js
+
 ## URLs
 
 ###  '/'
