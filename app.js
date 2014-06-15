@@ -44,7 +44,7 @@ var FACEBOOK_APP_ID = "734337516630340";
 var FACEBOOK_APP_SECRET = "6bc43f6db0a4dcd1e09d92a0acecd4ad";
 
 passport.use(new FacebookStrategy({
-  
+  // TODO http://creator.cotapon.org/articles/node-js/node_js-oauth-passport-facebook-twitter
 }));
 
 /// catch 404 and forward to error handler
