@@ -116,6 +116,7 @@ app.use(function(err, req, res) {
 });
 
 app.set('port', process.env.PORT || 5000);
+console.log('port: ', process.env.PORT);
 
 // socket setting
 var socketHandler = require('./lib/socketHandler');
