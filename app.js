@@ -44,7 +44,8 @@ passport.deserializeUser(function(obj, done){
 // facebook auth
 var FACEBOOK_APP_ID = "734337516630340";
 var FACEBOOK_APP_SECRET = "6bc43f6db0a4dcd1e09d92a0acecd4ad";
-var CALLBACK_URL = "http://localhost:3000/auth/facebook/callback";
+var CALLBACK_URL = "http://love-mirror./auth/facebook/callback";
+//var CALLBACK_URL = "http://localhost:3000/auth/facebook/callback";
 
 passport.use(new FacebookStrategy({
   clientID: FACEBOOK_APP_ID,
