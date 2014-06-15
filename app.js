@@ -11,7 +11,7 @@ var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var shake = require('./routes/shake');
 
 var app = express();
 
@@ -24,13 +24,15 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(session());
+app.use(session({secret: 'loveMirror'}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// PC page
 app.use('/', routes);
-app.use('/users', users);
+// SmartPhone page or facebook login page
+app.use('/shake', shake);
 
 passport.serializeUser(function(user, done){
   done(null, user);
@@ -45,36 +47,40 @@ var FACEBOOK_APP_SECRET = "6bc43f6db0a4dcd1e09d92a0acecd4ad";
 var CALLBACK_URL = "http://localhost:3000/auth/facebook/callback";
 
 passport.use(new FacebookStrategy({
-  // TODO http://creator.cotapon.org/articles/node-js/node_js-oauth-passport-facebook-twitter
   clientID: FACEBOOK_APP_ID,
   clientSecret: FACEBOOK_APP_SECRET,
   callbackURL: CALLBACK_URL
 },function(accessToken, refreshToken, profile, done){
   process.nextTick(function(){
-    done(null, profile);
+    return done(null, profile);
   });
 }));
 
-function facebookEnsureAuthenticated(req, res, next) {
+
+// from example
+function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
   res.redirect('/login');
 }
+// demo page
+//app.get('/account/facebook', ensureAuthenticated, account);
+//app.get('/login', login_facebook);
 
-app.get('/account/facebook', facebookEnsureAuthenticated, routes.account);
-app.get('/login/facebook', routes.login_facebook);
+// login url
 app.get('/auth/facebook',
   passport.authenticate('facebook')
 );
+// callback url after facebook login
 app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { failureRedirect: '/login/facebook' }),
+  passport.authenticate('facebook', { failureRedirect: '/login' }),
   function(req, res){
-    res.redirect('/');
+    res.redirect('/shake');
   }
 );
 
-app.get('/logout/facebook', function(req, res){
+app.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/');
+  res.redirect('/shake');
 });
 
 /// catch 404 and forward to error handler
