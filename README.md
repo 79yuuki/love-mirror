@@ -13,6 +13,8 @@ cd love-mirror
 npm install
 node app.js
 ```
+and open http://localhost:5000
+
 
 ## URLs
 
