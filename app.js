@@ -9,6 +9,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
+var socketHandler = require('./lib/socketHandler');
 
 var routes = require('./routes/index');
 var shake = require('./routes/shake');
@@ -115,15 +116,12 @@ app.use(function(err, req, res) {
     });
 });
 
-app.set('port', process.env.PORT || 5000);
-console.log('port: ', process.env.PORT);
+var port = process.env.PORT || 3000;
+app.set('port', port);
 
 // socket setting
-var socketHandler = require('./lib/socketHandler');
 var http = socketHandler(app);
 
-http.listen(3000, function(){
-  //console.log('listening on *:3000');
+http.listen(port, function(){
+  console.log('listening on *:', port);
 });
-
-module.exports = app;
