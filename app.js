@@ -58,10 +58,10 @@ passport.use(new FacebookStrategy({
 
 
 // from example
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) { return next(); }
-  res.redirect('/login');
-}
+//function ensureAuthenticated(req, res, next) {
+//  if (req.isAuthenticated()) { return next(); }
+//  res.redirect('/login');
+//}
 // demo page
 //app.get('/account/facebook', ensureAuthenticated, account);
 //app.get('/login', login_facebook);
@@ -114,5 +114,14 @@ app.use(function(err, req, res) {
     });
 });
 
+app.set('port', process.env.PORT || 3000);
+
+// socket setting
+var socketHandler = require('./lib/socketHandler');
+var http = socketHandler(app);
+
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
 
 module.exports = app;
