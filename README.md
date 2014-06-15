@@ -6,9 +6,13 @@ BaPA product
 
 Start love mirror.
 
-  cd love-mirror
-  npm install
-  node app.js
+Should install "editorconfig" & "jsHint" to your editor.
+
+```
+cd love-mirror
+npm install
+node app.js
+```
 
 ## URLs
 
