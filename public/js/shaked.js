@@ -14,7 +14,7 @@ socket.on('shaked', function(shaked){
 socket.on('newUser', function(userData){
   console.log('Here comes a new challenger', userData);
   $('#users')
-  .append('<li id="' + userData.id + '">' + formatList(userData.name, userData.count) + '</li>');
+  .append('<li id="' + userData.id + '"><img src="https://graph.facebook.com/' + userData.id + '/picture?type=large" />' + formatList(userData.name, userData.count) + '</li>');
 });
 
 function formatList(name, count){
