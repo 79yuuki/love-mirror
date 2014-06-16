@@ -12,7 +12,7 @@
   <h2>Hello, <%= user.displayName %>.</h2>
   <script type="text/javascript">
     var userId = <%- user.id %>;
-    var userName = <%- user.displayName %>;
+    var userName = "<%- user.displayName %>";
     console.log('user=============', user);
   </script>
 <% } %>
