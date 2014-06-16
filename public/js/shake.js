@@ -1,4 +1,4 @@
-/* global io */
+/* global io, userId, userName  */
 'use strict';
 
 var socket = io();
@@ -8,6 +8,11 @@ window.addEventListener('devicemotion', function(event) {
   var gv = event.accelerationIncludingGravity;
   if ( gv.x > 17) {
     count++;
-    socket.emit('shake', {x: gv.x, y: gv.y, z: gv.z, count: count});
+    socket.emit('shake', {
+      x: gv.x,
+      y: gv.y,
+      z: gv.z,
+      user: { id: userId, name: userName, count: count }
+    });
   }
 });

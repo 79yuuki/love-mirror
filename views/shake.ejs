@@ -10,6 +10,11 @@
   <a href="/auth/facebook">login</a>
 <% } else { %>
   <h2>Hello, <%= user.displayName %>.</h2>
+  <script type="text/javascript">
+    var userId = <%- user.id %>;
+    var userName = <%- user.displayName %>;
+    console.log('user=============', user);
+  </script>
 <% } %>
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 <script type="text/javascript" src="./js/shake.js"></script>
