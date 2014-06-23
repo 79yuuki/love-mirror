@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>demo</title>
+</head>
+<body>
+  <h1>socket test</h1>
+  <button id="ready">ready</button><br />
+  <button id="cancelReady">cancel ready</button><br />
+  <button id="start">START!!!!!</button><br />
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+
+var socket = io();
+
+$('ready').click(function(){
+  socket.emit('ready');
+});
+
+$('chancelReady').click(function(){
+  socket.emit('cancel ready');
+});
+
+$('start').click(function(){
+  socket.emit('start');
+});
+</script>
+</body>
+</html>
