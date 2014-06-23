@@ -16,15 +16,15 @@
 
 var socket = io();
 
-$('ready').click(function(){
+$('#ready').click(function(){
   socket.emit('ready');
 });
 
-$('chancelReady').click(function(){
+$('#chancelReady').click(function(){
   socket.emit('cancel ready');
 });
 
-$('start').click(function(){
+$('#start').click(function(){
   socket.emit('start');
 });
 </script>
