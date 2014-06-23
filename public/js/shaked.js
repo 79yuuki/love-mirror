@@ -17,6 +17,10 @@ socket.on('newUser', function(userData){
   .append('<li id="' + userData.id + '"><img src="https://graph.facebook.com/' + userData.id + '/picture?height=300" />' + formatList(userData.name, userData.count) + '</li>');
 });
 
+socket.on('user left', function(user){
+  $('#'+user.id).remove();
+});
+
 function formatList(name, count){
   return name + ' : ' + count;
 }
