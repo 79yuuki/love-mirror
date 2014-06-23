@@ -17,6 +17,14 @@ socket.on('newUser', function(userData){
   .append('<li id="' + userData.id + '"><img src="https://graph.facebook.com/' + userData.id + '/picture?height=300" />' + formatList(userData.name, userData.count) + '</li>');
 });
 
+socket.on('ready', function(){
+console.log('ready');
+});
+
+socket.on('waiting', function(){
+console.log('waiting');
+});
+
 socket.on('countDown', function(data){
 console.log('#####countDown ', data);
   $('#countDown').html(data.countTime);
@@ -28,7 +36,7 @@ console.log('#######playTime ', data);
 });
 
 socket.on('finish', function(winner){
-console.log('####winner""""',winner);
+console.log('####winner####',winner);
   $('#winner').html(winner.name);
 });
 
