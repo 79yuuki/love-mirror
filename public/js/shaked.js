@@ -17,16 +17,18 @@ socket.on('newUser', function(userData){
   .append('<li id="' + userData.id + '"><img src="https://graph.facebook.com/' + userData.id + '/picture?height=300" />' + formatList(userData.name, userData.count) + '</li>');
 });
 
-socket.on('countDown', function(res){
-  $('#countDown').html(res.countTime);
+socket.on('countDown', function(data){
+console.log('#####countDown ', data);
+  $('#countDown').html(data.countTime);
 });
 
-socket.on('playTime', function(res){
-  $('#playTime').html(res.playTime);
+socket.on('playTime', function(data){
+console.log('#######playTime ', data);
+  $('#playTime').html(data.playTime);
 });
 
 socket.on('finish', function(winner){
-console.log(winner);
+console.log('####winner""""',winner);
   $('#winner').html(winner.name);
 });
 
