@@ -1,0 +1,97 @@
+body {
+  background: #000000;
+}
+
+#mainContentsWrapper {
+  z-index: 10;
+  position: relative;
+}
+
+.videoHeader {
+  z-index: 5;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100px;
+  background-color: #000000;
+}
+
+.videoHeader .liveIcon {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.videoFooter {
+  z-index: 5;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100px;
+  background-color: #000000;
+}
+
+.overlay {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/resources/images/video_overlay_pattern.png') repeat;
+}
+
+.overlayShadow {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -ms-radial-gradient(center, circle farthest-corner, rgba(0,0,0,0) 0%, #000000 100%);
+  background-image: -moz-radial-gradient(center, circle farthest-corner, rgba(0,0,0,0) 0%, #000000 100%);
+  background-image: -o-radial-gradient(center, circle farthest-corner, rgba(0,0,0,0) 0%, #000000 100%);
+  background-image: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, rgba(0,0,0,0)), color-stop(1, #000000));
+  background-image: -webkit-radial-gradient(center, circle farthest-corner, rgba(0,0,0,0) 0%, #000000 100%);
+  background-image: radial-gradient(circle farthest-corner at center, rgba(0,0,0,0) 0%, #000000 100%);
+}
+
+#videoContentsWrapper {
+  z-index: 1;
+}
+
+.mainVideo {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+
+#mainContentsWrapper {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+}
+
+#naviContentsWrapper {
+}
+
+#naviContentsWrapper .logo {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+#naviContentsWrapper .about {
+  position: relative;
+  margin-top: 32px;
+}
+
+#naviContentsWrapper .howto {
+  position: relative;
+  margin-top: 8px;
+}
