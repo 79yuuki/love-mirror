@@ -89,14 +89,14 @@ app.get('/logout', function(req, res){
   res.redirect('/shake');
 });
 
+/// error handlers
+
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
-
-/// error handlers
 
 // development error handler
 // will print stacktrace
@@ -120,12 +120,12 @@ app.use(function(err, req, res) {
     });
 });
 
-var port = process.env.PORT || 3000;
-app.set('port', port);
-
 // socket setting
-var http = socketHandler(app);
+socketHandler(app, function(http){
 
-http.listen(port, function(){
-  console.log('listening on *:', port);
+  var port = process.env.PORT || 3000;
+  app.set('port', port);
+  http.listen(port, function(){
+    console.log('listening on *:', port);
+  });
 });
