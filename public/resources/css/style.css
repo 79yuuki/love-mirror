@@ -1,6 +1,12 @@
+/* ----- common ----- */
 body {
   background: #000000;
+  font-family: 'Forum', cursive;
 }
+
+.hidden { display: none; }
+
+/* ----- main ----- */
 
 #mainContentsWrapper {
   z-index: 10;
@@ -9,7 +15,7 @@ body {
   right: 50px;
 }
 
-/* introPannel */
+/* ----- introPannel ----- */
 
 #introContentsWrapper {
   z-index: 20;
@@ -22,10 +28,11 @@ body {
 }
 
 #introContentsWrapper .introPannel {
-  margin: auto auto;
+  margin: auto;
+  padding-top: 10px;
   width: 813px;
   height: 711px;
-  background: url('/resources/images/intro_pannel.png') center bottom;
+  background: url('/resources/images/intro_pannel.png') center bottom no-repeat;
 }
 
 #introContentsWrapper .startButton {
@@ -35,7 +42,7 @@ body {
   cursor:pointer;
 }
 
-/* video */
+/* ----- video ----- */
 
 #videoLayerWrapper .videoHeader {
   z-index: 5;
@@ -101,7 +108,7 @@ body {
   overflow: hidden;
 }
 
-/* navi */
+/* ----- main navi ----- */
 
 #naviContentsWrapper {
 }
@@ -120,4 +127,175 @@ body {
 #naviContentsWrapper .howto {
   position: relative;
   margin-top: 8px;
+}
+
+/* ----- game ----- */
+
+#gameContentsWrapper {
+  z-index: 20;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+/* left navi */
+
+#gameLeftNavi {
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  width: 300px;
+  height: 400px;
+  margin: 10px;
+}
+
+#gameLeftNavi .player {
+  color: #F0003C;
+  height: 40px;
+  width: 280px;
+  margin: 10px 0;
+}
+
+#gameLeftNavi .topPlayer {
+  height: 60px;
+}
+
+#gameLeftNavi .player .rankNumber {
+  font-size: 25px;
+  position: relative;
+  top: -15px;
+  left: 0px;
+  width: 10px;
+  line-height: 40px;
+  display: inline-block;
+}
+
+#gameLeftNavi .topPlayer .rankNumber {
+  top: -20px;
+  height: 60px;
+}
+
+#gameLeftNavi .player .playerPhoto {
+  margin: 0 10px 0 20px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #F0003C;
+}
+
+#gameLeftNavi .topPlayer .playerPhoto {
+  margin: 0 20px;
+  width: 58px;
+  height: 58px;
+}
+
+#gameLeftNavi .player .heartIcon {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  top: -10px;
+  left: 0px;
+}
+
+#gameLeftNavi .topPlayer .heartIcon {
+  width: 34px;
+  height: 36px;
+}
+
+#gameLeftNavi .player .shakeCount {
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  top: -14px;
+  left: 10px;
+  line-height: 40px;
+}
+
+#gameLeftNavi .topPlayer .shakeCount {
+  font-size: 20px;
+  top: -20px;
+  line-height: 60px;
+}
+
+/* center navi */
+
+#gameCenterNavi .startPannel,
+#gameCenterNavi .timeupPannel,
+#gameCenterNavi .readyPannel,
+#gameCenterNavi .countPannel{
+  position: relative;
+  text-align: center;
+  top: 250px;
+  cursor:pointer;
+}
+
+/* bottom navi */
+
+#gameBottomNavi {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+}
+
+#gameBottomNavi .player {
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+  text-align:center;
+  background-color: rgba(10, 10, 10, 0.8);
+}
+
+#gameBottomNavi .playerPhoto {
+  display:inline;
+  margin:0;
+  padding:0;
+  font-size: 0;
+  width: 38px;
+  height: 38px;
+}
+
+/* ----- result ----- */
+
+#resultContentsWrapper {
+  z-index: 20;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#resultContentsWrapper .resultPannel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -209px;
+  margin-left: -331px;
+  width: 662px;
+  height: 417px;
+  background: url('/resources/images/result_frame_big.png') center no-repeat;
+}
+
+#resultContentsWrapper .playerPhoto {
+  position: absolute;
+  top: 170px;
+  left: 160px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #F0003C;
+}
+
+#resultContentsWrapper .resultText {
+  position: absolute;
+  top: 170px;
+  left: 270px;
+  width: 230px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  color: #F0003C;
 }

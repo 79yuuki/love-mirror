@@ -1,5 +1,5 @@
 $(function() {
   $('#introContentsWrapper .start').on('click', function() {
-    $('#introContentsWrapper').hide();
+    $('#introContentsWrapper').fadeOut(1000);
   });
 });
