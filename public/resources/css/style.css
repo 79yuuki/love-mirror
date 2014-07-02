@@ -29,16 +29,16 @@ body {
 
 #introContentsWrapper .introPannel {
   margin: auto;
-  padding-top: 10px;
-  width: 813px;
-  height: 711px;
-  background: url('/resources/images/intro_pannel.png') center bottom no-repeat;
+  padding-top: 100px;
+  width: 801px;
+  height: 594px;
+  background: url('/resources/images/intro_pannel.png') center center no-repeat;
 }
 
 #introContentsWrapper .startButton {
   position: relative;
   text-align: center;
-  top: 490px;
+  top: 420px;
   cursor:pointer;
 }
 
